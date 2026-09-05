@@ -5,9 +5,15 @@
     "name": "plate-toolkit",
     "version": "1.1.0"
   },
-  "file_count": 56,
-  "total_bytes": 29485588,
+  "file_count": 57,
+  "total_bytes": 29485597,
   "files": [
+    {
+      "path": ".gitattributes",
+      "origin": "overlay",
+      "bytes": 9,
+      "sha256": "8b9c3028d6467ff3be7c793141927841d70f47f52d0590677438f488ca154992"
+    },
     {
       "path": ".github/workflows/ci.yml",
       "origin": "overlay",
