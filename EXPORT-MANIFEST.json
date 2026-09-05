@@ -6,7 +6,7 @@
     "version": "1.1.0"
   },
   "file_count": 57,
-  "total_bytes": 29485597,
+  "total_bytes": 29485383,
   "files": [
     {
       "path": ".gitattributes",
@@ -47,8 +47,8 @@
     {
       "path": "README.md",
       "origin": "overlay",
-      "bytes": 8784,
-      "sha256": "c0b5b966c6a6dbf705e1e0091af5ac6b8a8d603529611ff959c8514ff4942b82"
+      "bytes": 8570,
+      "sha256": "7504f7e9028f5a3b59a1de281b9a298da22ffa2ddb5e5f3f685843c59c2b8610"
     },
     {
       "path": "SECURITY.md",

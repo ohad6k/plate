@@ -19,9 +19,9 @@
   <img src="assets/plate-hero.svg" width="880" alt="Plate: give your agent eyes for design. Brief, catalog, resolve, kit, stack, capture, inspect, check, pair, license.">
 </p>
 
-Give your agent a clear view of what it builds. Plate it screenshots the running project in an isolated browser and hands the actual image back, gives the agent a repeatable improvement loop over that evidence, and finds real licensed material for the things a brief asks for instead of leaving placeholders behind.
+Give your agent a clear view of what it builds. Plate captures the running project, returns the actual image, and supplies asset references and source checks for the next revision.
 
-It is a local MCP server for Claude Code, Codex and Cursor. It does not call a model, does not upload your project, and does not judge whether a design is good. The judgment stays with your agent and with you.
+Connect it to Claude Code, Codex or Cursor over MCP. Your existing agent does the work; Plate provides the tools and keeps captures on your computer.
 
 ## Built with Plate Pro
 
@@ -132,7 +132,7 @@ Arguments, limits and protocol notes are in [docs/TOOLS.md](docs/TOOLS.md). Two 
 | Online library and private saved briefs | — | Included |
 | Licence | MIT source, free | One-time individual licence |
 
-Pro is a separate distribution with its own installer, published on [the Plate site](https://plate-pro-nu.vercel.app/). Its source is not in this repository, the free tools work without a purchase.
+Pro is a separate distribution with its own installer, published on [the Plate site](https://plate-pro-nu.vercel.app/). The free tools in this repository work without a purchase.
 
 Both distributions install as `plate-toolkit` at the same version, so pip will not replace one with the other on its own:
 
