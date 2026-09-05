@@ -1,0 +1,191 @@
+/* Modpack / web / entrance.css
+ *
+ * The entrance choreography from the Ledger page, pulled out as utilities.
+ *
+ * The idea, in one line: nothing fades in. Every element is masked and slid out
+ * from behind its own edge, or drawn from one end, and the order is a ladder
+ * from the top of the page to the bottom, with the hero object arriving under
+ * all of it. A page where everything appears at once reads as a screenshot. A
+ * page where things fade in reads as a template. Masked reveals read as made.
+ *
+ * ---------------------------------------------------------------------------
+ * How to use
+ * ---------------------------------------------------------------------------
+ *
+ *   <div class="mp-mask"><span class="mp-rise" style="--d:.28s">EYEBROW</span></div>
+ *
+ *   <h1>
+ *     <span class="mp-line">
+ *       <span class="mp-mask mp-inline"><span class="mp-rise" style="--d:.34s">Every</span></span>
+ *       <span class="mp-mask mp-inline"><span class="mp-rise" style="--d:.40s">subscription</span></span>
+ *     </span>
+ *   </h1>
+ *
+ *   <div class="mp-up" style="--d:.86s"> ... buttons ... </div>
+ *   <i class="mp-draw" style="--d:1.15s"></i>
+ *
+ * Every utility reads --d for its delay and --t for its duration, so the
+ * timing ladder lives in the markup next to the thing it moves and you can read
+ * the whole sequence down the file.
+ *
+ * ---------------------------------------------------------------------------
+ * The ladder the reference page uses. Copy the shape, not the seconds.
+ * ---------------------------------------------------------------------------
+ *
+ *   0.10s  header slides down 10px and fades
+ *   0.28s  eyebrow rises out of its mask
+ *   0.34s  headline, word by word, 60ms apart, in reading order
+ *   0.40s    "subscription"
+ *   0.46s    "your"      0.52s "company"
+ *   0.58s    "forgot"    0.64s "about."
+ *   0.86s  the actions block rises 16px and fades
+ *   1.02s  the list heading rises
+ *   1.06s  row 1 hairline draws left to right, 1.12s its text rises
+ *   1.16s / 1.22s   row 2
+ *   1.26s / 1.32s   row 3
+ *   1.36s / 1.42s   row 4
+ *   1.15s  the link underline draws
+ *   1.54s  the proof line fades in behind a short drawn dash
+ *
+ * Two rules that carry it:
+ *   - the gap between a hairline and the text it belongs to is 60ms, always.
+ *     The line arrives, then the words arrive on it.
+ *   - the whole thing is over inside 2.4s, which is the same window the hero
+ *     object takes to settle. The page finishes assembling in one gesture
+ *     rather than trickling.
+ *
+ * The easing is one curve everywhere: cubic-bezier(.16,.84,.24,1). Fast out of
+ * the gate, long slow settle, no overshoot on type. The headline words get
+ * (.16,.86,.22,1), a fraction longer in the tail, because they travel further.
+ */
+
+:root {
+  --mp-ease: cubic-bezier(.16, .84, .24, 1);
+  --mp-ease-type: cubic-bezier(.16, .86, .22, 1);
+  --mp-dur: .9s;
+}
+
+/* ---- masked reveal -------------------------------------------------------
+ * The mask is a clipping box the size of the line. The child starts fully
+ * below it and travels to 0. 110% and not 100% because descenders and the
+ * font's own line box mean 100% still leaves a sliver showing at frame 1. */
+
+.mp-mask {
+  display: block;
+  overflow: hidden;
+}
+
+/* for masking a word inside a line of type: keeps the baseline, and pads the
+ * box so the descender is not clipped once the word has landed */
+.mp-mask.mp-inline {
+  display: inline-block;
+  vertical-align: bottom;
+  padding-bottom: .16em;
+  margin-bottom: -.16em;
+}
+
+.mp-rise {
+  display: block;
+  transform: translateY(var(--from, 110%));
+  animation: mp-up var(--t, var(--mp-dur)) var(--mp-ease) var(--d, 0s) forwards;
+}
+
+/* the headline variant: travels further, settles longer */
+.mp-rise-type {
+  display: inline-block;
+  transform: translateY(112%);
+  animation: mp-up var(--t, 1.05s) var(--mp-ease-type) var(--d, 0s) forwards;
+}
+
+@keyframes mp-up {
+  to { transform: translateY(0); }
+}
+
+/* ---- rise and fade -------------------------------------------------------
+ * For blocks that are not type on a baseline: button rows, cards, figures.
+ * This is the only place opacity is animated, and it is always paired with
+ * travel. Opacity alone is the fade the pack exists to replace. */
+
+.mp-up {
+  opacity: 0;
+  transform: translateY(var(--from, 16px));
+  animation: mp-rise-in var(--t, .85s) var(--mp-ease) var(--d, 0s) forwards;
+}
+
+.mp-down {
+  opacity: 0;
+  transform: translateY(calc(-1 * var(--from, 10px)));
+  animation: mp-rise-in var(--t, .9s) var(--mp-ease) var(--d, 0s) forwards;
+}
+
+@keyframes mp-rise-in {
+  to { opacity: 1; transform: none; }
+}
+
+/* ---- drawn line ----------------------------------------------------------
+ * Hairlines, underlines, dashes and row rules. They are drawn from the left,
+ * never faded. Put it on the element itself, or on a ::before for a rule that
+ * sits at the top of a row. */
+
+.mp-draw {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: mp-draw var(--t, 1.05s) var(--mp-ease) var(--d, 0s) forwards;
+}
+
+@keyframes mp-draw {
+  to { transform: scaleX(1); }
+}
+
+/* ---- fade ----------------------------------------------------------------
+ * The exception. One per page at most, for the quiet proof line at the end of
+ * the ladder, so the sequence stops rather than snapping shut. */
+
+.mp-fade {
+  opacity: 0;
+  animation: mp-fade var(--t, .9s) ease var(--d, 0s) forwards;
+}
+
+@keyframes mp-fade {
+  to { opacity: 1; }
+}
+
+/* ---- a row that reveals as line-then-text -------------------------------
+ * The pattern the capability list uses. Set --d on the row and both halves
+ * fall out of it with the 60ms gap already applied. */
+
+.mp-row {
+  position: relative;
+}
+
+.mp-row::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 1px;
+  background: var(--mp-line, rgba(255, 255, 255, .10));
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: mp-draw 1.05s var(--mp-ease) var(--d, 0s) forwards;
+}
+
+.mp-row .mp-mask > * {
+  display: block;
+  transform: translateY(115%);
+  animation: mp-up .9s var(--mp-ease) calc(var(--d, 0s) + .06s) forwards;
+}
+
+/* ---- capture and accessibility ------------------------------------------
+ * A frame grabber pauses these through document.getAnimations(), which needs
+ * them to still be running animations rather than finished ones, so never
+ * replace forwards with a settled end state in the stylesheet.
+ *
+ * Under reduced motion the page still has to arrive assembled, not blank. */
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-rise, .mp-rise-type, .mp-up, .mp-down, .mp-draw, .mp-fade,
+  .mp-row::before, .mp-row .mp-mask > * {
+    animation-duration: .01ms;
+    animation-delay: 0s;
+  }
+}

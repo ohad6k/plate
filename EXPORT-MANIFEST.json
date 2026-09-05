@@ -1,0 +1,364 @@
+{
+  "artifact": "Plate Starter public export",
+  "generated_by": "scripts/export_starter.py",
+  "package": {
+    "name": "plate-toolkit",
+    "version": "1.1.0"
+  },
+  "file_count": 56,
+  "total_bytes": 29485588,
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "origin": "overlay",
+      "bytes": 2451,
+      "sha256": "a6286ff59945c2581c52454bba4b8c1de31b55582e5f24e47d62799915a90887"
+    },
+    {
+      "path": ".gitignore",
+      "origin": "overlay",
+      "bytes": 99,
+      "sha256": "1c5f2f984965b6fd8cbe2bbac2d16643a79bde09e167d9c1b467460251070347"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "origin": "overlay",
+      "bytes": 2992,
+      "sha256": "17d7bdae4ee0b572a08376539836dc5308ad50b514f10d50814e7caac823996e"
+    },
+    {
+      "path": "LICENSE",
+      "origin": "repository",
+      "bytes": 1069,
+      "sha256": "3127757285953c1ce56c9d75a5ff70b1adf1794cdd2f88ce734d8de60ba94027"
+    },
+    {
+      "path": "MANIFEST.in",
+      "origin": "overlay",
+      "bytes": 1649,
+      "sha256": "825d7b7af4494f57355a0197116a1ba75a16e16184bdf4f2345ee99d8090c89c"
+    },
+    {
+      "path": "README.md",
+      "origin": "overlay",
+      "bytes": 8784,
+      "sha256": "c0b5b966c6a6dbf705e1e0091af5ac6b8a8d603529611ff959c8514ff4942b82"
+    },
+    {
+      "path": "SECURITY.md",
+      "origin": "overlay",
+      "bytes": 2325,
+      "sha256": "1091faf3153f42ea534d53ac9c7b8718c9f64050a4987638de5b920046ba6ea0"
+    },
+    {
+      "path": "assets/plate-hero.svg",
+      "origin": "overlay",
+      "bytes": 1942,
+      "sha256": "fa5adba1d8ab3f085966d1c39ceb3b04a67421aa41a04258d048c191b8f6a73e"
+    },
+    {
+      "path": "assets/plate-mark.svg",
+      "origin": "repository",
+      "bytes": 321,
+      "sha256": "27d5d3ff91498648146b8a9db35a40045599099b1e47db3ca32b33c9e393c24f"
+    },
+    {
+      "path": "assets/showcase/cinder.webp",
+      "origin": "repository",
+      "bytes": 123832,
+      "sha256": "46f5fd80362cae77ecf2dd3b17a89afd91be3106db489ed52a3d277d19bdaa68"
+    },
+    {
+      "path": "assets/showcase/kiln.webp",
+      "origin": "repository",
+      "bytes": 149696,
+      "sha256": "b010c555b0bc6190a0de6e143450bf18d77b1c48265e88b8e74c02defa24aafd"
+    },
+    {
+      "path": "assets/showcase/night-pitch.webp",
+      "origin": "repository",
+      "bytes": 517252,
+      "sha256": "12e50e960ec4b5bf7db891e7bc6dd9f1f6565045c21d4b263b92937b7445e4a1"
+    },
+    {
+      "path": "docs/INSTALL.md",
+      "origin": "overlay",
+      "bytes": 5237,
+      "sha256": "9ebae91cec5dc3582b85964efa0d43d773d3d03b84728028acb3789f145ab9c2"
+    },
+    {
+      "path": "docs/QUICKSTART.md",
+      "origin": "overlay",
+      "bytes": 3061,
+      "sha256": "99c5482055f02f18222a9d1f5f328b5945f3e17b97bcc4b4c8a96b2a4d154365"
+    },
+    {
+      "path": "docs/TOOLS.md",
+      "origin": "overlay",
+      "bytes": 4656,
+      "sha256": "0cd00bd37643d10142c45184e73a6d78e6c267a8b574bf762d362ac417605339"
+    },
+    {
+      "path": "kits/product-card/KIT.md",
+      "origin": "overlay",
+      "bytes": 8311,
+      "sha256": "ec7edd44a1c0c0b485ed22dde57995dc614def696400b47819331e4c90ec99cf"
+    },
+    {
+      "path": "kits/product-card/LICENSES.md",
+      "origin": "repository",
+      "bytes": 4074,
+      "sha256": "e5c4ed5d5d2ed42f5dea08ab9fcb5ba516c13156e2442303b17b517e2ec1d54a"
+    },
+    {
+      "path": "kits/product-card/assets/studio.hdr",
+      "origin": "repository",
+      "bytes": 1615248,
+      "sha256": "e7cfda5f4e98e623db12b8bfd0184e048488e4855d9c83e2751fb44a32e80c45"
+    },
+    {
+      "path": "kits/product-card/hero-object.js",
+      "origin": "repository",
+      "bytes": 30140,
+      "sha256": "59b181104fe4af5663b1a238980a2d0ce782f05386d2599016a2a9ab290e1926"
+    },
+    {
+      "path": "kits/stadium/KIT.md",
+      "origin": "repository",
+      "bytes": 11347,
+      "sha256": "62bb09e5a411ea8107a2254d906c2f988d127de4d837004ef4ddf3ace95b277a"
+    },
+    {
+      "path": "kits/stadium/LICENSES.md",
+      "origin": "repository",
+      "bytes": 4575,
+      "sha256": "925b8f640de07f06ab754320bb4ce07d4aaee59f3a0544dcec4191b1cb381e90"
+    },
+    {
+      "path": "kits/stadium/assets/concrete_diff.jpg",
+      "origin": "repository",
+      "bytes": 118806,
+      "sha256": "6e40c0fc908f4d66431836f5abe203f3a4eb064e88824378a91a46a26e2f464c"
+    },
+    {
+      "path": "kits/stadium/assets/concrete_nor.jpg",
+      "origin": "repository",
+      "bytes": 110906,
+      "sha256": "523bd94a1be5dd2f11c2ae2b7d7c77445cf5bd9e41604db515a7c8364dcba067"
+    },
+    {
+      "path": "kits/stadium/assets/grass_diff.jpg",
+      "origin": "repository",
+      "bytes": 4766204,
+      "sha256": "8e1c6d21365d4b89bc5a35ab664da98a78dbc3ab9ba6100474881c8619a5b113"
+    },
+    {
+      "path": "kits/stadium/assets/grass_nor.jpg",
+      "origin": "repository",
+      "bytes": 6047262,
+      "sha256": "df0cf0ce96e653f033e5b934d5b12995464bda027aa53bd12e329be889aa9f45"
+    },
+    {
+      "path": "kits/stadium/assets/grass_rough.jpg",
+      "origin": "repository",
+      "bytes": 2274652,
+      "sha256": "34e1733bf4064b6950a575ff57e78c8b7ff71b63749eb48a49221bd65de6fb4f"
+    },
+    {
+      "path": "kits/stadium/assets/moonless_golf_2k.hdr",
+      "origin": "repository",
+      "bytes": 6688317,
+      "sha256": "d85421f5a0ed59f6f761babf088b80472e7b3b122e492f30668393dd1c1363bd"
+    },
+    {
+      "path": "kits/stadium/assets/ual.glb",
+      "origin": "repository",
+      "bytes": 6671104,
+      "sha256": "1b7bf67866360665426bb99e4c71bd619f19b408453c24e30f0c3071601eee5c"
+    },
+    {
+      "path": "kits/stadium/inject.js",
+      "origin": "repository",
+      "bytes": 11126,
+      "sha256": "329174e54322c2743032c70562a30b7a84c19b5d4d2bdcec7cab1577f08116a0"
+    },
+    {
+      "path": "kits/stadium/stadium.js",
+      "origin": "repository",
+      "bytes": 14116,
+      "sha256": "01c0fa2927172c1e598cd5ec5981d101e264715480d511493c73638eca631802"
+    },
+    {
+      "path": "mcp/plate.py",
+      "origin": "repository",
+      "bytes": 113340,
+      "sha256": "5c1feedb4e61953d48fc8035b554bb3c649afc78e15a349cc27191138ed2ae4f"
+    },
+    {
+      "path": "plate_toolkit/__init__.py",
+      "origin": "overlay",
+      "bytes": 103,
+      "sha256": "e4aa3888ed604aae6a7ef235f8613365df5b9d54efbe257b39af76646b931571"
+    },
+    {
+      "path": "plate_toolkit/__main__.py",
+      "origin": "repository",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "plate_toolkit/cli.py",
+      "origin": "overlay",
+      "bytes": 8154,
+      "sha256": "f5698a33064507c939a9faf74dcda2c8df10bde4e7855a6607c0a7b10a22946e"
+    },
+    {
+      "path": "plate_toolkit/design.py",
+      "origin": "overlay",
+      "bytes": 4088,
+      "sha256": "4be832755d6ef8b38ad0fbb39b29d4e891a35b645cdc78b3e2a4d7f60a193f1c"
+    },
+    {
+      "path": "plate_toolkit/library.py",
+      "origin": "repository",
+      "bytes": 14066,
+      "sha256": "6ca40df8bbf22ebebbc3eff41ef5628c2100c1d7997a3f56c806e434df90e40e"
+    },
+    {
+      "path": "plate_toolkit/licensing.py",
+      "origin": "repository",
+      "bytes": 4513,
+      "sha256": "8ca78f83de533b552507040b90f59eaaf6e7680fa678eda8c9a91d3f0a6cbf34"
+    },
+    {
+      "path": "plate_toolkit/resources.py",
+      "origin": "repository",
+      "bytes": 1208,
+      "sha256": "53ce87316bafd2accb48c2e6644c55da4f6d8dbf5e9691b8e865464b719ed786"
+    },
+    {
+      "path": "plate_toolkit/runtime/__init__.py",
+      "origin": "repository",
+      "bytes": 77,
+      "sha256": "c1f4b30ddfdc607562ee61d0ef9dbaf996c441cda83223200b7c9c07dfc87f83"
+    },
+    {
+      "path": "plate_toolkit/vision.py",
+      "origin": "repository",
+      "bytes": 5891,
+      "sha256": "77515e602e3d44b755e587fc5254d64bfc321ab8c7fcaadb0c28b1ffd853d6e9"
+    },
+    {
+      "path": "pyproject.toml",
+      "origin": "overlay",
+      "bytes": 833,
+      "sha256": "210e8555cf192b34eb950b1c93f73a12f8365f27f3d9efb650023d6af49439b6"
+    },
+    {
+      "path": "setup.py",
+      "origin": "overlay",
+      "bytes": 898,
+      "sha256": "a4195b04785cf73c2cbaa23a6a64ff3523023188234b4bcb856484884713237e"
+    },
+    {
+      "path": "skill/plate/SKILL.md",
+      "origin": "overlay",
+      "bytes": 9410,
+      "sha256": "08620cf2982277d621d05b3e2fd61724840a4884a89561d7f938de0c720f9261"
+    },
+    {
+      "path": "skill/plate/references/three-r128/INJECTOR.md",
+      "origin": "repository",
+      "bytes": 3501,
+      "sha256": "240e745ca81cb177fdb1c14a39941bbe4afb1b1e40f85fad5bafad0c859c6656"
+    },
+    {
+      "path": "skill/plate/references/three-r128/inject.js",
+      "origin": "repository",
+      "bytes": 11126,
+      "sha256": "329174e54322c2743032c70562a30b7a84c19b5d4d2bdcec7cab1577f08116a0"
+    },
+    {
+      "path": "skill/plate/references/three-r128/render.mjs",
+      "origin": "repository",
+      "bytes": 7337,
+      "sha256": "b6ee0cf96d8a3f49c428ae1633edfdaf6ca6928fbe3cb2664202cc62490791bb"
+    },
+    {
+      "path": "skill/plate/references/three-r128/shoot.mjs",
+      "origin": "repository",
+      "bytes": 6666,
+      "sha256": "16da3add5d6487ce28036a04393791a45f8d946ce2411d6231971d1fa6bc1d46"
+    },
+    {
+      "path": "skill/plate/references/three-r128/stadium.js",
+      "origin": "repository",
+      "bytes": 14116,
+      "sha256": "01c0fa2927172c1e598cd5ec5981d101e264715480d511493c73638eca631802"
+    },
+    {
+      "path": "skill/plate/references/three-r128/wipe.sh",
+      "origin": "repository",
+      "bytes": 2341,
+      "sha256": "630604a0597ab8c22a6445f961555370d67b960835de9248c8f75721987ad4db"
+    },
+    {
+      "path": "skill/plate/references/web/README.md",
+      "origin": "overlay",
+      "bytes": 4307,
+      "sha256": "8fc7b985dcb5e3b50affa997712a929d0cd14fc5a0491a22d8c66da98dbd2485"
+    },
+    {
+      "path": "skill/plate/references/web/entrance.css",
+      "origin": "repository",
+      "bytes": 6712,
+      "sha256": "57eebb12caf04f4c66cb7494934b021abb036dd991ef40bb2d9864bc9ed32c70"
+    },
+    {
+      "path": "skill/plate/references/web/grain.css",
+      "origin": "repository",
+      "bytes": 5601,
+      "sha256": "8213f0d3e8c2f98ea1e58eecde713753f62fc1e046dc3d408fd7d861c47ac4ef"
+    },
+    {
+      "path": "skill/plate/references/web/hero-object.js",
+      "origin": "repository",
+      "bytes": 30140,
+      "sha256": "59b181104fe4af5663b1a238980a2d0ce782f05386d2599016a2a9ab290e1926"
+    },
+    {
+      "path": "skill/plate/references/web/stack.md",
+      "origin": "overlay",
+      "bytes": 15516,
+      "sha256": "71a2350e12e28c04856d2fc101a4c47400405d46a21acc8975152da3da0edfb3"
+    },
+    {
+      "path": "tests/test_no_paid_content.py",
+      "origin": "overlay",
+      "bytes": 5138,
+      "sha256": "2d7db49e112afac4113518eb101e21aa26742175d2e15ffd9868cd78b8326c52"
+    },
+    {
+      "path": "tests/test_starter_smoke.py",
+      "origin": "overlay",
+      "bytes": 8904,
+      "sha256": "63dd35cac056fb924782e541e7560652cbad118a03c53876534598031e6b7d02"
+    }
+  ],
+  "excluded": [
+    "plate_toolkit/design.py from the development tree, the four paid design systems and the nine paid implementations",
+    "plate_toolkit/projects.py, plate_toolkit/cloud.py, plate_toolkit/activation.py and any Studio module or UI",
+    "library/ and every Full Plate library payload",
+    "site/ sources, site/examples pages and every example asset except the three labelled preview images",
+    "research, replay and restricted third-party data",
+    "docs/ internal release, provider, verification and product notes",
+    ".qa, loop, web, dist, caches, environment files, licences, keys and personal records",
+    "the development git history: the exported tree is a new repository"
+  ],
+  "notes": [
+    "Every file above was named in an explicit allowlist; no directory was walked.",
+    "mcp/plate.py is the shared runtime, exported unmodified. It defines Pro tools whose implementations are not exported; plate_toolkit/cli.py filters the surface to ten free names and refuses any other name before dispatch.",
+    "EXPORT-MANIFEST.json is generated last and is therefore not listed in itself.",
+    "The exported tree has no git history. Initialise a new repository in it."
+  ]
+}

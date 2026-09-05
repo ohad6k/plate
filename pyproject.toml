@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plate-toolkit"
+version = "1.1.0"
+description = "Real material, design briefs and finishing tools for your existing agent."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Plate" }]
+keywords = ["mcp", "design", "agent", "claude", "codex", "cursor"]
+dependencies = ["Pillow>=10.4,<13"]
+
+[project.optional-dependencies]
+capture = ["playwright>=1.52,<2"]
+
+[project.urls]
+Homepage = "https://plate-pro-nu.vercel.app/"
+Repository = "https://github.com/ohad6k/plate"
+
+[project.scripts]
+plate = "plate_toolkit.cli:main"
+plate-toolkit = "plate_toolkit.cli:main"
+
+[tool.setuptools]
+packages = ["plate_toolkit", "plate_toolkit.runtime"]
+include-package-data = false

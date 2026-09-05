@@ -1,0 +1,22 @@
+# Start empty, then explicitly admit only public source and runtime resources.
+global-exclude *
+include pyproject.toml setup.py MANIFEST.in LICENSE README.md
+include plate_toolkit/__init__.py plate_toolkit/__main__.py plate_toolkit/cli.py
+include plate_toolkit/design.py plate_toolkit/library.py plate_toolkit/licensing.py
+include plate_toolkit/resources.py plate_toolkit/vision.py
+include plate_toolkit/runtime/__init__.py
+include mcp/plate.py
+include docs/QUICKSTART.md docs/INSTALL.md docs/TOOLS.md
+include kits/product-card/KIT.md kits/product-card/LICENSES.md kits/product-card/hero-object.js kits/product-card/assets/studio.hdr
+include kits/stadium/KIT.md kits/stadium/LICENSES.md kits/stadium/inject.js kits/stadium/stadium.js
+include kits/stadium/assets/concrete_diff.jpg kits/stadium/assets/concrete_nor.jpg
+include kits/stadium/assets/grass_diff.jpg kits/stadium/assets/grass_nor.jpg kits/stadium/assets/grass_rough.jpg
+include kits/stadium/assets/moonless_golf_2k.hdr kits/stadium/assets/ual.glb
+include skill/plate/SKILL.md
+include skill/plate/references/web/README.md skill/plate/references/web/stack.md
+include skill/plate/references/web/hero-object.js skill/plate/references/web/grain.css skill/plate/references/web/entrance.css
+include skill/plate/references/three-r128/INJECTOR.md skill/plate/references/three-r128/inject.js
+include skill/plate/references/three-r128/render.mjs skill/plate/references/three-r128/shoot.mjs
+include skill/plate/references/three-r128/stadium.js skill/plate/references/three-r128/wipe.sh
+include tests/test_starter_smoke.py tests/test_no_paid_content.py
+global-exclude __pycache__ *.py[cod] .env* *.key

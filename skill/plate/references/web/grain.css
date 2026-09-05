@@ -1,0 +1,155 @@
+/* Modpack / web / grain.css
+ *
+ * The atmosphere layers: bloom under the object, vignette over the frame, film
+ * grain over everything. Three rules, in a fixed z order, and the page stops
+ * looking like a browser rendering a document.
+ *
+ * The grain is the one that does the most work and is the most often missing.
+ * A flat sRGB fill has no noise in it, so a dark page reads as a dead field of
+ * one colour and every gradient bands. Animated monochrome noise at ~19%
+ * opacity in overlay puts a floor under the blacks, hides the banding, and
+ * gives the whole frame the texture of something photographed.
+ *
+ * ---------------------------------------------------------------------------
+ * The markup this expects, in this order inside the stage
+ * ---------------------------------------------------------------------------
+ *
+ *   <div class="stage">
+ *     <div id="bloom"><div class="b1"></div><div class="b2"></div></div>
+ *     <canvas id="gl" width="1600" height="900"></canvas>
+ *     <div class="content"> ... type ... </div>
+ *     <div id="vig"></div>
+ *     <div id="grain">
+ *       <svg id="grainSvg" viewBox="0 0 800 450" preserveAspectRatio="none"
+ *            xmlns="http://www.w3.org/2000/svg">
+ *         <filter id="gf" x="0" y="0" width="100%" height="100%">
+ *           <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="3"
+ *                         stitchTiles="stitch" result="n">
+ *             <animate attributeName="seed" values="2;9;17;28;41;56;63;77"
+ *                      dur="0.64s" repeatCount="indefinite"/>
+ *           </feTurbulence>
+ *           <feColorMatrix in="n" type="saturate" values="0"/>
+ *         </filter>
+ *         <rect width="800" height="450" filter="url(#gf)"/>
+ *       </svg>
+ *     </div>
+ *   </div>
+ *
+ * Why the SVG is 800x450 inside a 1600x900 stage: the noise is generated at
+ * half resolution and scaled up, which doubles the grain size so it reads at
+ * viewing distance instead of dissolving into a grey wash, and halves the cost
+ * of a filter that re-runs every seed change.
+ *
+ * Why seed animates over eight values in 0.64s and not a random loop: it is a
+ * finite deterministic cycle, so a frame grabber that calls
+ * svg.pauseAnimations() and svg.setCurrentTime(t) gets the same grain every
+ * run and the before/after pair differs only where it should.
+ *
+ * The z ladder, and it matters:
+ *   3  bloom    under the object, over the page ground, screen blend
+ *   2  canvas   the hero object
+ *   4  content  the type, which sits OVER the object
+ *   6  vignette over the type as well, so the corners fall off everything
+ *   7  grain    last, over the whole frame, or it is not film grain
+ */
+
+/* ---- ground ---------------------------------------------------------------
+ * Not flat. An off-centre radial that lifts one region, so the frame already
+ * has a light direction before anything is drawn on it. The centre sits near
+ * the hero object, not in the middle of the page. */
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(1400px 900px at 68% 42%,
+    #0b0e14 0%, #05060a 62%, #030407 100%);
+}
+
+/* ---- bloom ----------------------------------------------------------------
+ * Two soft pools in screen blend, sitting between the page ground and the
+ * object. One neutral and large, one accent-coloured and smaller and offset,
+ * so the glow around the object is not a symmetric halo.
+ *
+ * It starts at 0. The hero script drives its opacity up as the object arrives,
+ * so the light comes in with the thing making it. A bloom that is already on
+ * at t=0 is a gradient. */
+
+#bloom {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+
+#bloom .b1 {
+  position: absolute;
+  left: 50%;
+  top: 16%;
+  width: 1080px;
+  height: 760px;
+  background: radial-gradient(closest-side,
+    rgba(214, 228, 255, .15), rgba(214, 228, 255, .05) 45%, transparent 72%);
+}
+
+#bloom .b2 {
+  position: absolute;
+  left: 60%;
+  top: 34%;
+  width: 620px;
+  height: 520px;
+  background: radial-gradient(closest-side, rgba(126, 240, 193, .13), transparent 70%);
+}
+
+/* ---- the hero canvas ------------------------------------------------------ */
+
+#gl {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- vignette -------------------------------------------------------------
+ * Off-centre to match the ground, transparent well past the middle, and only
+ * really biting in the last 34%. Two stops, not one: a gentle 30% shoulder so
+ * the falloff has a shape, then 80% in the corners. A single stop to black
+ * reads as a dark border. */
+
+#vig {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  background: radial-gradient(120% 105% at 58% 44%,
+    transparent 32%, rgba(0, 0, 0, .30) 66%, rgba(0, 0, 0, .80) 100%);
+}
+
+/* ---- grain ----------------------------------------------------------------
+ * overlay, not normal: it lifts the blacks and darkens the lights around the
+ * mid point instead of laying grey haze over the frame. .19 is the ceiling on
+ * a dark page. Past about .24 the type starts to crawl. */
+
+#grain {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  opacity: .19;
+  mix-blend-mode: overlay;
+}
+
+#grain svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Grain that moves is the point, but it is also the one layer that can make a
+ * page unusable for someone. Freeze it, keep the texture. */
+@media (prefers-reduced-motion: reduce) {
+  #grain svg animate { display: none; }
+}
