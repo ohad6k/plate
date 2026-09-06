@@ -12,7 +12,7 @@
   <a href="docs/QUICKSTART.md">Quickstart</a> ·
   <a href="docs/TOOLS.md">Tools</a> ·
   <a href="docs/INSTALL.md">Install</a> ·
-  <a href="https://plate-pro-nu.vercel.app/">Website</a>
+  <a href="https://getplate.vercel.app/">Website</a>
 </p>
 
 <p align="center">
@@ -26,23 +26,23 @@ Connect it to Claude Code, Codex or Cursor over MCP. Your existing agent does th
 ## Built with Plate Pro
 
 <p align="center">
-  <a href="https://plate-pro-nu.vercel.app/examples/game-arena/after.html">
+  <a href="https://getplate.vercel.app/examples/game-arena/after.html">
     <img src="assets/showcase/night-pitch.webp" width="880" alt="Night Pitch: a floodlit top-down arena on stadium turf, with wave, integrity and score readouts">
   </a>
 </p>
 
-**Night Pitch** — a playable floodlit arena, keyboard and on-screen touch controls, real stadium turf and a rigged character. Its complete implementation is included in Plate Pro. [Play it](https://plate-pro-nu.vercel.app/examples/game-arena/after.html)
+**Night Pitch** — a playable floodlit arena, keyboard and on-screen touch controls, real stadium turf and a rigged character. Its complete implementation is included in Plate Pro. [Play it](https://getplate.vercel.app/examples/game-arena/after.html)
 
 These are demonstrations from the Plate example set, not benchmarks, and not something the free Starter produces for you. The Starter gives your agent the evidence loop and the material; Pro adds the systems and worked implementations behind these examples.
 
 <table>
   <tr>
-    <td width="50%"><a href="https://plate-pro-nu.vercel.app/examples/3d-bottle/after.html"><img src="assets/showcase/cinder.webp" alt="Cinder 750: an insulated bottle product page with the bottle lit by a real studio environment"></a></td>
-    <td width="50%"><a href="https://plate-pro-nu.vercel.app/examples/web-kiln/after.html"><img src="assets/showcase/kiln.webp" alt="Kiln: a landing page for a pottery studio in Lisbon"></a></td>
+    <td width="50%"><a href="https://getplate.vercel.app/examples/3d-bottle/after.html"><img src="assets/showcase/cinder.webp" alt="Cinder 750: an insulated bottle product page with the bottle lit by a real studio environment"></a></td>
+    <td width="50%"><a href="https://getplate.vercel.app/examples/web-kiln/after.html"><img src="assets/showcase/kiln.webp" alt="Kiln: a landing page for a pottery studio in Lisbon"></a></td>
   </tr>
   <tr>
-    <td><b>Cinder 750</b> — product page, real environment light. <a href="https://plate-pro-nu.vercel.app/examples/3d-bottle/after.html">Open it</a></td>
-    <td><b>Kiln</b> — pottery studio landing page. <a href="https://plate-pro-nu.vercel.app/examples/web-kiln/after.html">Open it</a></td>
+    <td><b>Cinder 750</b> — product page, real environment light. <a href="https://getplate.vercel.app/examples/3d-bottle/after.html">Open it</a></td>
+    <td><b>Kiln</b> — pottery studio landing page. <a href="https://getplate.vercel.app/examples/web-kiln/after.html">Open it</a></td>
   </tr>
 </table>
 
@@ -132,7 +132,7 @@ Arguments, limits and protocol notes are in [docs/TOOLS.md](docs/TOOLS.md). Two 
 | Online library and private saved briefs | — | Included |
 | Licence | MIT source, free | One-time individual licence |
 
-Pro is a separate distribution with its own installer, published on [the Plate site](https://plate-pro-nu.vercel.app/). The free tools in this repository work without a purchase.
+Pro is a separate distribution with its own installer, published on [the Plate site](https://getplate.vercel.app/). The free tools in this repository work without a purchase.
 
 Both distributions install as `plate-toolkit` at the same version, so pip will not replace one with the other on its own:
 
