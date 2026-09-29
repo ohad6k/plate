@@ -4,6 +4,8 @@
 
 <h1 align="center">Plate</h1>
 
+<!-- mcp-name: io.github.ohad6k/plate -->
+
 <p align="center">
   <b>Finished websites, games and films as source your coding agent makes yours.</b>
 </p>

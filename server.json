@@ -1,0 +1,29 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ohad6k/plate",
+  "title": "Plate",
+  "description": "Design tools for coding agents: capture the page, check for generated-look tells, find assets",
+  "version": "1.1.0",
+  "websiteUrl": "https://getplate.pages.dev/",
+  "repository": {
+    "url": "https://github.com/ohad6k/plate",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "plate-toolkit",
+      "version": "1.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
+  ]
+}
