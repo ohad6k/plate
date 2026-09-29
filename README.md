@@ -5,52 +5,49 @@
 <h1 align="center">Plate</h1>
 
 <p align="center">
-  <b>Give your coding agent eyes for design.</b>
+  <b>Finished websites, games and films as source your coding agent makes yours.</b>
 </p>
 
 <p align="center">
-  Plate is a library of complete websites and motion films you make yours in one prompt, at <a href="https://getplate.pages.dev">getplate.pages.dev</a>.<br>
-  This repository is its free Starter: the design tools your agent uses to see and improve what it builds.<br>
-  Made by <a href="https://ohad-motion.vercel.app/">Ohad Krispin</a>.
+  <a href="https://getplate.pages.dev/projects/">Projects</a> ·
+  <a href="https://getplate.pages.dev/guides/">Guides</a> ·
+  <a href="https://getplate.pages.dev/library.html">Library</a> ·
+  <a href="https://getplate.pages.dev/llms.txt">llms.txt</a> ·
+  <a href="docs/QUICKSTART.md">Toolkit quickstart</a>
 </p>
 
-<p align="center">
-  <a href="docs/QUICKSTART.md">Quickstart</a> ·
-  <a href="docs/TOOLS.md">Tools</a> ·
-  <a href="docs/INSTALL.md">Install</a> ·
-  <a href="https://getplate.pages.dev/">Website</a>
-</p>
+Plate ([getplate.pages.dev](https://getplate.pages.dev/)) is a collection of complete, working interactive sites, browser games and motion films. You download one, open the folder in Claude Code, Codex or Cursor, and your agent adapts it to your brand from a content file and an editing guide. The engine and effects stay intact; copy, colours and options change.
 
-<p align="center">
-  <img src="assets/plate-hero.svg" width="880" alt="Plate: give your agent eyes for design. Brief, catalog, resolve, kit, stack, capture, inspect, check, pair, license.">
-</p>
+- **5 projects are free** with a Google sign-in, no card.
+- **17 are in Plate Pro**, US$49.50 once at the launch price (regularly US$89), no subscription, v1 updates included.
+- Every website and game has a plain page listing what you receive, what you can change, its limits, its archive checksum and the exact instructions for your agent, plus a recorded adaptation made by a fresh agent session.
 
-Give your agent a clear view of what it builds. Plate captures the running project, returns the actual image, and supplies asset references and source checks for the next revision.
+Plate is made by [Ohad Krispin](https://ohad-motion.vercel.app/). It is not [Plate.js](https://platejs.org), the React rich-text editor, and not Plate CMS (getplate.com).
 
-Connect it to Claude Code, Codex or Cursor over MCP. Your existing agent does the work; Plate provides the tools and keeps captures on your computer.
+## The collection
 
-## Built with Plate Pro
+| Project | Access | What it is |
+| --- | --- | --- |
+| [Meniscus](https://getplate.pages.dev/projects/meniscus/) | Pro | A fragrance house whose whole page sits under a live fluid. |
+| [Tide](https://getplate.pages.dev/projects/tide/) | Pro | A product site for an invented bedside sleep-sound orb that runs from dusk to dawn as you scroll. |
+| [Perihelion](https://getplate.pages.dev/projects/perihelion/) | Pro | A planetarium studio site that is one live-rendered flight: scroll moves a probe along an authored path through a ringed gas giant, a terminator crossing, a nebula volume and a lensed black-hole disc, drawn by one WebGL2 shader. |
+| [Meridian](https://getplate.pages.dev/projects/meridian/) | Pro | An expedition outfitter's site told as a 48-second film that scrolling advances: four Poly Haven worlds sampled live by a raw-WebGL camera, whip pans and blink cuts between chapters, two shots per crossing, film slates with the facts, a route drawn across every world and completed as a map. |
+| [Murmur](https://getplate.pages.dev/projects/murmur/) | Pro | A voice-and-hearing research lab whose site is a murmuration: 409,600 WebGL2 points form the wordmark, a synthesised voice, its spectrogram, an ear and the lab's mark across four scroll chapters. |
+| [The Observatory](https://getplate.pages.dev/projects/observatory/) | Pro | An atmospheric-data studio's website that is one authored night: scrolling advances an hour from 18:36 to 06:00, driving a live WebGL2 shader sky, three instrument panels and a case study, all read from one keyframed model. |
+| [The Gazette](https://getplate.pages.dev/projects/gazette/) | Pro | A fictional weekly culture paper's website, played as a single issue: a sticky cover slides beneath a pushing contents spread, a pinned feature turns like a real four-page fold, and the back cover is the issue's own ending. |
+| [Riot Grain](https://getplate.pages.dev/projects/riot-grain/) | Pro | A record label's release site drawn entirely by code: canvas letter bodies fall and settle under a hand-written Verlet physics solver, a pointer shove scatters and resettles them, and the tracklist, marquee, countdown and pre-order locker are all assembled from the same content file. |
+| [Patchbay](https://getplate.pages.dev/projects/patchbay/) | Pro | A desktop synthesiser's front panel, rebuilt as a website: two oscillators, a filter, an envelope and a delay run on the Web Audio API behind a real 17-key playable keyboard, with an owner's manual and an engraved serial plate. |
+| [Atelier Rook](https://getplate.pages.dev/projects/atelier-rook/) | Free | A small architecture studio's site drawn as its own seven-sheet drawing set: a fixed board of three layers (site plan, section, structure/light study over it, floor plan) redraws itself as you scroll, ending on the practice and a contact sheet with a mailto and a downloadable issue register. |
+| [Hollow Lane Nursery](https://getplate.pages.dev/projects/hollow-lane/) | Free | A plant nursery's single-page site built around one canvas-drawn campion that grows through six stages as you scroll, alongside three sales benches of fifteen authored plant drawings, a sketch map and an order list you fill from the benches and take as a mailto or a .txt download. |
+| [Daybay](https://getplate.pages.dev/projects/daybay/) | Free | A body-camera firefight in a sunlit concrete bay. |
+| [Lookout](https://getplate.pages.dev/projects/lookout/) | Free | A one-room stay above a dam whose page scrolls through a real day: seven registered photographs of one hill, crossfaded as the camera turns to follow the sun. |
+| [Sillage](https://getplate.pages.dev/projects/sillage/) | Free | A fragrance site with no scroll: one fixed frame, a photographed bottle you press, and live air over the top of it. |
 
-<p align="center">
-  <a href="https://getplate.pages.dev/examples/game-arena/after.html">
-    <img src="assets/showcase/night-pitch.webp" width="880" alt="Night Pitch: a floodlit top-down arena on stadium turf, with wave, integrity and score readouts">
-  </a>
-</p>
+Films are listed at [https://getplate.pages.dev/motion.html](https://getplate.pages.dev/motion.html). The whole catalogue is machine-readable at [https://getplate.pages.dev/projects.json](https://getplate.pages.dev/projects.json).
 
-**Night Pitch** — a playable floodlit arena, keyboard and on-screen touch controls, real stadium turf and a rigged character. Its complete implementation is included in Plate Pro. [Play it](https://getplate.pages.dev/examples/game-arena/after.html)
+## This repository: the free Plate toolkit
 
-These are demonstrations from the Plate example set, not benchmarks, and not something the free Starter produces for you. The Starter gives your agent the evidence loop and the material; Pro adds the systems and worked implementations behind these examples.
-
-<table>
-  <tr>
-    <td width="50%"><a href="https://getplate.pages.dev/examples/3d-bottle/after.html"><img src="assets/showcase/cinder.webp" alt="Cinder 750: an insulated bottle product page with the bottle lit by a real studio environment"></a></td>
-    <td width="50%"><a href="https://getplate.pages.dev/examples/web-kiln/after.html"><img src="assets/showcase/kiln.webp" alt="Kiln: a landing page for a pottery studio in Lisbon"></a></td>
-  </tr>
-  <tr>
-    <td><b>Cinder 750</b> — product page, real environment light. <a href="https://getplate.pages.dev/examples/3d-bottle/after.html">Open it</a></td>
-    <td><b>Kiln</b> — pottery studio landing page. <a href="https://getplate.pages.dev/examples/web-kiln/after.html">Open it</a></td>
-  </tr>
-</table>
+This repository is the MIT-licensed Plate toolkit: an MCP server and CLI that give your coding agent eyes for design. It captures the running project, returns the actual image, and supplies asset references and source checks for the next revision. It is optional; the website projects above need only a static file server.
 
 ## Install
 
