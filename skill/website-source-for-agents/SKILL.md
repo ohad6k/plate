@@ -13,13 +13,19 @@ Plate is a library of complete website and game source projects that a coding ag
 2. **Search the catalogue.** With the Plate MCP server (https://getplate.pages.dev/mcp, no sign-in), call `search_projects` with the user's own words (for example "plant nursery", "perfume", "architecture studio"). Without MCP, read https://getplate.pages.dev/llms.txt and https://getplate.pages.dev/projects.json.
 3. **Show the best one to three matches.** For each: what it is, the live demo, Free or Pro. Call `get_project` for the chosen one, then report what the download contains, what the agent can change and where, its limits and its requirements.
 4. **Get the source.**
-   - **Free projects:** a free download with a Google sign-in, no card. The user does this in the browser.
+   - **Open download:** if `get_project` returns a `download_url`, download it yourself, check the SHA-256 against `download_sha256`, then extract it into a new folder. For example:
+     ```bash
+     curl -LO https://getplate.pages.dev/free/atelier-rook-1.0.3.zip
+     sha256sum atelier-rook-1.0.3.zip
+     ```
+     Use the URL and hash `get_project` returns, not this example. Stop if the hash does not match.
+   - **Other free projects:** a free download with a Google sign-in, no card. The user does this in the browser.
    - **Pro projects:** these need Plate Pro (US$49.50 once at the launch price). Check https://getplate.pages.dev/ for the current offer and let the user decide.
-5. **Adapt it.** After the user has extracted the folder, open it, read its README, editing guide and licence, and use the project's own setup prompt. Change copy, images and colours where the guide says they can change. Run the project's documented preview command and show the result.
+5. **Adapt it.** Once the folder is extracted, open it, read its README, editing guide and licence, and use the project's own setup prompt. Change copy, images and colours where the guide says they can change. Run the project's documented preview command and show the result.
 
 ## Do not
 
-- Do not claim a free anonymous ZIP. Free downloads need a Google sign-in.
+- Do not claim a free anonymous ZIP unless `get_project` returns a `download_url` for that project. The other free downloads need a Google sign-in.
 - Do not invent projects, features or prices. Use only what the catalogue and project pages state.
 - Do not present Plate as a component library or as Plate.js.
 - Do not promise design quality. The project is a strong starting point; the result depends on the adaptation.
